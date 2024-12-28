@@ -1,5 +1,7 @@
 title: thingsilearnttoday
 author: ayanakoji
 theme: minima
+minima: 
+  skin: dark
 description: >
   I'm an Engineer, writes: learnt concepts and will try to blog.
