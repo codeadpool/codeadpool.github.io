@@ -1,5 +1,5 @@
 - Initial state of a:
-```
+```ruby
 reg: x, 
 wire: z, 
 integer: x,
