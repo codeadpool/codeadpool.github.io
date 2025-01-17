@@ -8,23 +8,23 @@ permalink: /about/
 
 ## Work Experience
 
-### New York University, Graduate Assistant  
+### University, Graduate Assistant  
 **Jan. 2024 - Present**  
 - Developed Verilog model for custom SRAM with timing model emulating physical design. Conducted 10,000-iteration Monte Carlo simulations, revealing 3σ variation of 5% in c2d delay for verification under PVT conditions.  
 - Created UVM/SV testbench for SRAM using CRV, directed tests for corner cases, SVAs for protocol checking, factory overrides for test specifics, and a comprehensive functional coverage model driving verification closure.  
 - Focused on vertical reuse by optimizing passive components and sequences for better integration with the top-level testbench. Planned integration into processor cache.  
 
-### NYU VIP Processor Design Verification, Developer  
+### University VIP Processor Design Verification, Developer  
 **Sep. 2023 - Dec. 2023**  
 - Implemented Verilator-based verification environment for multi-level cache system, validating L1 (direct-mapped) with WBB and L2 (4-way set-associative) caches with LRU replacement.  
 - Executed test suite validating single-cycle L1 read hits, L2 cache operations, and Write Back Buffer performance, analyzing hit rates, miss penalties, and average memory access time (AMAT) to quantify cache efficiency.  
 - Conducted fault injection tests for SECDED ECC verification and stress tests assessing cache resilience under concurrent accesses and full cache conditions.  
 
-### New York University, Graduate Research  
+### University, Graduate Research  
 **Jan. 2023 - Dec. 2023**  
 - Designed and simulated high-efficiency Boost and Buck converters with voltage mode control and dynamic frequency scaling for wireless power transfer to mobile devices on PCB.  
 
-### New York University, Course Assistant  
+### University, Course Assistant  
 **Sep. 2023 - Dec. 2023**
 
 ### SDL Power Generation PVT. Ltd. (6.198 MW), Technical Intern  
@@ -67,9 +67,10 @@ permalink: /about/
 
 - **Languages**: Verilog, SystemVerilog (UVM), VHDL, C, C++ (data structures, OOP), Python  
 - **EDA Tools**: Synopsys (VCS, Verdi), Cadence (Virtuoso, Innovus, Genus), OpenROAD  
-- **Tool Chains**: Vivado Design Suite, YoSys Open Synthesis Suite, Verilator  
-- **Certifications**:  
-  - SystemVerilog Assertions v5.1 by Cadence Design Systems  
-  - SystemVerilog Accelerated Verification with UVM v1.2.6 by Cadence Design Systems  
-  - Jasper Formal Expert v22.09, Jasper Formal Fundamentals v2212 by Cadence Design Systems  
-  - SystemVerilog for Design and Verification v21.10 by Cadence Design Systems  
+- **Tool Chains**: Vivado Design Suite, YoSys Open Synthesis Suite, Verilator
+ 
+# Certifications:  
+- SystemVerilog Assertions v5.1 by Cadence Design Systems  
+- SystemVerilog Accelerated Verification with UVM v1.2.6 by Cadence Design Systems  
+- Jasper Formal Expert v22.09, Jasper Formal Fundamentals v2212 by Cadence Design Systems  
+- SystemVerilog for Design and Verification v21.10 by Cadence Design Systems  
