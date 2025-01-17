@@ -7,18 +7,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Simple HTML Page</title>
+    <title>Manga-Style Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Manga Borders */
+        .manga-border {
+            border: 5px solid black;
+            box-shadow: 5px 5px 0 black, -5px -5px 0 black;
+        }
+
+        /* Header Section */
+        header {
+            background: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 8px solid black;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        header .speech-bubble {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            background: #fff;
+            border: 5px solid black;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1rem;
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(-5px); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            background: black;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 4px dashed black;
+            padding: 1rem;
+            display: inline-block;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-top: 8px solid black;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            border: 4px solid black;
+            box-shadow: 8px 8px 0 black;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translate(-5px, -5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-top: 8px solid black;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 80%;
+            margin: 1rem auto;
+            padding: 0.8rem;
+            border: 4px solid black;
+            border-radius: 5px;
+            display: block;
+            font-size: 1rem;
+        }
+
+        .contact form button {
+            padding: 0.8rem 2rem;
+            background: black;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .contact form button:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-        <h1>Welcome to My Website</h1>
-    <nav>
-        <ul>
-            <li><a href="about">Resume</a></li>
-        </ul>
-    </nav>
+    <!-- Header -->
+    <header class="manga-border">
+        <h1>Welcome to My Manga World!</h1>
+        <p>Unleashing Creativity, One Panel at a Time</p>
+        <div class="speech-bubble manga-border">Let's Start!</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a creative artist and developer who loves combining code with art. Whether it's building websites or designing manga-inspired graphics, I put my heart into every panel!
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="content">
+                    <h3>Project 1</h3>
+                    <p>A manga-themed website.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="content">
+                    <h3>Project 2</h3>
+                    <p>A creative comic app design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Your Name</p>
+        <p>&copy; 2025 Ayanakoji. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
