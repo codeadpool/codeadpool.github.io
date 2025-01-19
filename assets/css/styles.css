@@ -14,7 +14,7 @@
 
 body {
     font-family: 'Manga Temple', sans-serif;
-    background-image: url('/assets/gojo.jpg'); /* Background image */
+    background-image: url('/assets/bw.jpg'); /* Background image */
     background-size: cover; /* Scales the image */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* No repetition */
@@ -26,86 +26,60 @@ body {
     min-height: 100vh; /* Ensures the body spans full viewport height */
 }
 
-.shorter-manga-border {
-    width: 38%;
-    height: 5%;
+/* Basic Styles */
+header {
+    width: 100%;
     background-color: inherit;
-    margin: 0 auto;
-    margin-top: 1%;
-    position: relative;
-    padding: 0%;
+    color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
 
-    font-size: 18px;
-    line-height: 1.4;
-    
-    /* Irregular border */
-    border: 3px solid #000;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
 
-    background-image: none;
-    background-color: transparent;
+.navbar .logo {
+    font-size: 2rem;
+    color: #000000;
+
+    border: none;
+}
+
+.navbar .logo-container{
+    flex: 0;
+}
+
+.navbar .logo-container a{
     
-    /* Sketchy effect */
-    box-shadow: 
-      inset 0 -3px 0 0 #000,
-      inset 3px 0 0 0 #000,
-      inset 0 3px 0 0 #000,
-      inset -3px 0 0 0 #000;
-    
-    /* Slight rotation for dynamic feel */
-    transform: rotate(-1deg);
-  }
-  
-  .shorter-manga-border::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border: 2px solid #000;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    pointer-events: none;
-  }
-  
-/* Manga Borders */
-.manga-border {
-    margin: 5%;
-    padding: 10%;
-    /* border: 5px solid black;
-    box-shadow: 5px 5px 0 black, -5px -5px 0 black; */
+    color: rgb(0, 0, 0);
+    background-color: inherit;
 }
 
 /* Header Section */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 2rem; /* Adds breathing space */
-    background: inherit; /* Semi-transparent background */
-    /* border-bottom: 8px solid black; */
-    position: relative;
-}
-
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 header p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    max-width: 800px; /* Restrict paragraph width for readability */
+    max-width: 800px;
+    margin: 0 auto; /* Centers paragraph content */
 }
 
+/* Header Navigation Links */
 header nav {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    justify-content: center; /* Centers the navigation links */
-    gap: 1rem; /* Adds spacing between links */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     padding: 1rem;
 }
 
@@ -121,9 +95,96 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #000000;
+    background-color: #000;
     color: white;
     transform: scale(1.1);
+}
+
+/* Header Section */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto; /* Centers paragraph content */
+}
+
+/* Header Navigation Links */
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #000;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+/* Manga Borders */
+.shorter-manga-border {
+    width: 50%;
+    height: 150px;
+    margin: 30%;
+    margin-top: 25%;
+    position: relative;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.4;
+
+    /* Irregular border */
+    border: 3px solid #000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+    background-color: transparent;
+    box-shadow: 
+      inset 0 -3px 0 0 #000,
+      inset 3px 0 0 0 #000,
+      inset 0 3px 0 0 #000,
+      inset -3px 0 0 0 #000;
+
+    transform: rotate(-1deg);
+}
+
+.shorter-manga-border::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid #000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    pointer-events: none;
+}
+
+.manga-border {
+    margin: 5%;
+    padding: 10%;
+}
+
+.nothing-border {
+   margin: 0%;
+   margin-top: 23%;
 }
 
 /* About Section */
@@ -147,9 +208,10 @@ header nav a:hover {
 
 /* Projects Section */
 .projects {
-    padding: 2rem;
+    margin: 10%;
+    margin-top: 5%;
+    padding: 0%;
     background: inherit;
-    border-top: 8px solid black;
 }
 
 .projects h2 {
@@ -165,34 +227,49 @@ header nav a:hover {
 }
 
 .project-card {
+    position: relative;
     border: 4px solid black;
     box-shadow: 8px 8px 0 black;
     overflow: hidden;
     transition: transform 0.3s;
-    background: inherit;
+    text-align: center;
+    padding: 1rem;
+    background-color: inherit;
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.project-card .details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0; /* Hidden by default */
+    transform: translateY(10px); /* Slightly shifted */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .project-card:hover {
     transform: translate(-5px, -5px);
-    font-family:cursive;
-    color: white;
-    background-color: black;
+    background-color: #1B1B1B; /* Optional: subtle background change */
+    color: #fff;
+    box-shadow: 8px 8px 0 #660000;
 }
 
-.project-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+.project-card:hover h3 {
+    color: #922929; /* Change heading color on hover */
 }
 
-.project-card .content {
-    padding: 1rem;
-    text-align: center;
+.project-card:hover .details {
+    opacity: 1; /* Reveal the details */
+    transform: translateY(0); /* Bring the details back to place */
 }
 
-.project-card h3 {
-    font-size: 1.4rem;
-}
 
 /* Contact Section */
 .contact {
@@ -241,3 +318,10 @@ footer {
     font-size: 0.9rem;
     margin-top: auto; /* Pushes footer to the bottom of the page */
 }
+
+
+
+
+
+
+
