@@ -36,3 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
         blogPostsContainer.appendChild(postElement);
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-links a');
+
+    links.forEach(link => {
+        if (link.href.includes(currentPath)) {
+            link.classList.add('active');
+        }
+    });
+});
+
