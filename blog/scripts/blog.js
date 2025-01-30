@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             date: "January 18, 2025",
             summary: "Learn about the tools and technologies I used to create my portfolio website.",
             link: "/blog/posts/vertical_reuse.html"
+        },
+        {
+            title: "System Verilog Scheduling",
+            date: "January 30, 2025",
+            summary: "how scheduling works in systemverilog",
+            link: "/blog/posts/sv_scheduling.html"
         }
     ];
 

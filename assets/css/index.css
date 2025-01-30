@@ -1,0 +1,277 @@
+/* General Reset */
+@font-face {
+    font-family: 'Manga Temple';
+    src: url('/assets/fonts/manga_temple/mangat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #922929;
+    --text-color: #333;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-hover-bg: #000;
+    --nav-hover-text: white;
+    --font-family: 'Manga Temple', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+
+    background-image: url('/assets/gojo.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text-color); 
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+header {
+    width: 100%;
+    background-color: inherit;
+    color: #000;
+    position: fixed;
+
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); */
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    max-width: 1200px; 
+    margin: 0 auto;
+    flex-direction: column; 
+    padding: 2rem;
+}
+
+.main-container h1 {
+    font-size: 4rem; /* Big bold text */
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.main-container p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    max-width: 800px; /* Keeps text readable */
+    line-height: 1.5;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width:none;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0); */
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+}
+
+.navbar .logo:hover{
+    color: var(--secondary-color);
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    background-color: inherit;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+    transform: scale(1.1);
+}
+
+.navbar .nav-links a.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: inherit;
+    color: #000;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes footer to the bottom of the page */
+}
+
+ /* .navbar .logo-container{
+    flex: 0;
+}
+
+ .navbar .logo-container a{
+    
+    color: rgb(0, 0, 0);
+    background-color: inherit;
+}  */
+
+/* header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #000;
+    color: white;
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header nav a.active {
+    background-color: #000000;  
+    color: #922929;  
+    transform: scale(1.1);
+
+}
+
+header nav a.active:hover {
+    transform: scale(1.1);  
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #000;
+    color: white;
+    transform: scale(1.1);
+} */
+
+/* .shorter-manga-border {
+    width: 50%;
+    height: 150px;
+    margin: 30%;
+    margin-top: 25%;
+    position: relative;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.4;
+
+    border: 3px solid #000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+    background-color: transparent;
+    box-shadow: 
+      inset 0 -3px 0 0 #000,
+      inset 3px 0 0 0 #000,
+      inset 0 3px 0 0 #000,
+      inset -3px 0 0 0 #000;
+
+    transform: rotate(-1deg);
+}
+
+.shorter-manga-border::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid #000;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    pointer-events: none;
+} 
+
+.manga-border {
+    margin: 5%;
+    padding: 10%;
+}*/
+
+/* .nothing-border {
+   margin: 0%;
+   margin-top: 23%;
+} */
