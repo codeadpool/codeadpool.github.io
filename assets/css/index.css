@@ -56,9 +56,9 @@ header {
     align-items: center;
     text-align: center;
     height: 80vh;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
-    flex-direction: column; 
+    flex-direction: column;
     padding: 2rem;
 }
 
@@ -74,6 +74,33 @@ header {
     color: var(--text-color);
     max-width: 800px; /* Keeps text readable */
     line-height: 1.5;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .main-container h1 {
+        font-size: 2.5rem; /* Smaller text for h1 on mobile */
+    }
+
+    .main-container p {
+        font-size: 1.2rem; /* Adjust font size for paragraphs on mobile */
+        max-width: 90%; /* Allow for more flexible text width */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container h1 {
+        font-size: 2rem; /* Even smaller font size on very small screens */
+    }
+
+    .main-container p {
+        font-size: 1rem; /* Even smaller font size on very small screens */
+        max-width: 95%; /* Make sure text fits well on very small screens */
+    }
 }
 
 
@@ -113,6 +140,7 @@ header {
     border-radius: 20px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .navbar .nav-links a:hover {
