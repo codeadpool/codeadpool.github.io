@@ -243,7 +243,7 @@ body.dark-mode .post .meta {
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 60px;
+  margin-top: auto;
   padding: 20px;
   font-size: 0.9rem;
   color: var(--footer-text);
@@ -271,22 +271,6 @@ body.dark-mode footer {
 .dark-mode-toggle:hover {
   background: linear-gradient(135deg, var(--accent-hover), var(--accent-color));
   transform: scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 3rem;
-  }
-
-  .post h2 {
-    font-size: 1.8rem;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
 }
 
 /* Post Page Layout */
@@ -460,6 +444,22 @@ transition: color 0.3s;
 
 .post-content a:hover {
 color: var(--accent-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .post h2 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* Responsive Adjustments */
