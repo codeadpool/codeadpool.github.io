@@ -29,11 +29,12 @@
   --dark-card-text: #e8e8e8;
   --dark-meta-text: #999; 
   --dark-footer-text: #fff; 
+  --font-family: JB;
 }
 
 
 body {
-  font-family: JB;
+  font-family: var(--font-family);
   line-height: 1.7;
   background-color: var(--primary-bg);
   color: var(--primary-text);

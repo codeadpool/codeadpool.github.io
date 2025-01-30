@@ -32,17 +32,18 @@ body {
     background-attachment: fixed;
 
     color: var(--text-color); 
-    line-height: 1.6;
+    line-height: 1.7;
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
+    height: 100%;
+    justify-content: space-between;
 }
 
 header {
     width: 100%;
     background-color: inherit;
     color: #000;
-    position: fixed;
 
     top: 0;
     z-index: 1000;
@@ -60,6 +61,7 @@ header {
     margin: 0 auto;
     flex-direction: column;
     padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .main-container h1 {
@@ -130,10 +132,10 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    /* background: inherit; */
+    background: inherit;
     color: #000;
     font-size: 0.9rem;
-    margin-top: auto; /* Pushes footer to the bottom of the page */
+    margin-top: auto; 
 }
 
 /* Mobile responsiveness */
