@@ -90,6 +90,15 @@ header {
         font-size: 1.2rem; /* Adjust font size for paragraphs on mobile */
         max-width: 90%; /* Allow for more flexible text width */
     }
+
+    .navbar .nav-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        align-items: center; /* Center the links horizontally */
+    }
+    
+    .navbar .nav-links a {
+        margin-bottom: 10px; /* Add spacing between links on mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -102,7 +111,6 @@ header {
         max-width: 95%; /* Make sure text fits well on very small screens */
     }
 }
-
 
 .navbar {
     display: flex;
