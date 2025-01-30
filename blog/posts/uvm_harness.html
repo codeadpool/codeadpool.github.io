@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="/blog/styles/blog.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/i-am-at.html">Contact</a>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="post-container">
+        <h1 class="post-title">Port Coercion and Signal Driving</h1>
+        <p class="post-meta">Published on May 15, 2023</p>
+
+        <div class="post-content">
+            <p>The key to understanding this approach lies in the concept of port coercion:</p>
+
+            <ul>
+                <li>Net ports, particularly when declared as inputs, can be coerced to inout ports by the SystemVerilog compiler.</li>
+                <li>This coercion occurs when the compiler detects potential drivers for these ports, even if they are initially declared as inputs.</li>
+            </ul>
+
+            <h2>Why Net Ports?</h2>
+            <ul>
+                <li><strong>Flexibility</strong>: Net ports, especially when declared as inputs, provide more flexibility than variable ports (like logic).</li>
+                <li><strong>Coercion Behavior</strong>: SystemVerilog allows net ports to be coerced to inout, enabling bidirectional signal flow when needed.</li>
+                <li><strong>Resolving Multiple Drivers</strong>: Net ports can handle multiple drivers more gracefully than variable ports, which is crucial for the harness technique.</li>
+            </ul>
+
+            <h2>Driving Signals</h2>
+            <p>Contrary to the initial assumption, these net ports can indeed be driven, but through a specific mechanism:</p>
+
+            <ul>
+                <li><strong>Virtual Interface Driving</strong>: The paper states, "VCS also coerces ports of an interface if there is any code that drives it from a virtual interface reference"[3.2.1].</li>
+                <li><strong>Runtime Flexibility</strong>: This allows for dynamic changes in signal direction and driving capability without modifying the interface definition.</li>
+            </ul>
+
+            <h2>Detailed Explanation</h2>
+            <ul>
+                <li><strong>Initial Declaration</strong>: The ports are initially declared as inputs, which are net types by default.</li>
+                <li><strong>Compilation Process</strong>: During compilation, if the compiler detects any potential drivers (e.g., from virtual interfaces or testbench code), it automatically coerces these input ports to inout.</li>
+                <li><strong>Runtime Behavior</strong>: This coercion allows the ports to be driven from the testbench side when needed, while still being able to receive signals from the DUT.</li>
+                <li><strong>Bidirectional Support</strong>: This approach enables the same interface to work for both master and slave configurations without requiring separate definitions.</li>
+                <li><strong>Avoiding Restrictions</strong>: Using inout directly would impose restrictions on connecting to signals of different widths, which is avoided by this coercion technique.</li>
+            </ul>
+
+            <h2>Practical Implications</h2>
+            <ul>
+                <li><strong>Testbench Flexibility</strong>: This approach allows testbench components to drive signals when needed, without hardcoding the direction in the interface definition.</li>
+                <li><strong>Stub Compatibility</strong>: It supports working with both active RTL and stub modules without changing the interface connections.</li>
+                <li><strong>Dynamic Role Changes</strong>: Agents can switch between master and slave roles dynamically, as the signal directions are not fixed in the interface definition.</li>
+            </ul>
+
+            <h2>Summary</h2>
+            <p>In summary, while the ports are declared as nets (typically inputs), the paper's approach leverages SystemVerilog's port coercion feature to enable driving these signals when needed, providing a flexible and powerful mechanism for testbench-DUT interactions.</p>
+
+            <h2>WE GOT:</h2>
+            <ul>
+                <li>We removed the instantiation of interfaces.</li>
+                <li>We removed the DEFINES for the parameters.</li>
+                <li>Eliminated "two-pass randomization":
+                    <ul>
+                        <li>randomization of ONE-SET of variables depend upon another, first pass: RTL parametrization and then those are packed and imported to test-bench building.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>DO:</h2>
+            <h4>Define an interface with all signals declared as ports which are all wire and input:</h4>
+            <ul>
+                <li>with each interface port corresponding to the name of a DUT port (henceforth called the DUT interface).</li>
+                <li>all ports must be wire and input:
+                    <ul>
+                        <li>port coercion: simulator forces the ports to their proper direction.</li>
+                        <li>inout: Inout doesn't work cause both directions require same length.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul>
+                <li>Define a wrapper interface (henceforth called a harness) and make the harness instantiate the DUT interface.</li>
+                <li>Connect the DUT interface's ports to the DUT using an upward reference to the module name.</li>
+            </ul>
+
+            <p>Bind the harness into the DUT, Syntax:</p>
+
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <pre><code>bind &lt;module_type&gt; &lt;interface_type&gt; &lt;interface_name&gt;</code></pre>
+            </div>
+
+            <h4>Variable Width support:</h4>
+            <h4>Extract RTL Parameters:</h4>
+            <ul>
+                <li>Put this function in a module and bind it to the harness.</li>
+                <li>RTL Bug may not manifest in one RTL configuration but can be in other.</li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 Ayanakoji. All rights reserved.
+    </footer>
+</div>
+
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+</body>
+</html>

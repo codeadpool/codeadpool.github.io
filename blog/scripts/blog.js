@@ -1,22 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const blogPosts = [
         {
-            title: "Introduction to My Blog",
+            title: "UVM Harness",
             date: "January 19, 2025",
-            summary: "This is the first post on my blog, where I share updates about my projects and insights.",
-            link: "posts/post1.html"
+            summary: "Harness why and its uses",
+            link: "/blog/posts/uvm_harness.html"
         },
         {
-            title: "How I Built My Website",
+            title: "Vertical Reuse",
             date: "January 18, 2025",
             summary: "Learn about the tools and technologies I used to create my portfolio website.",
-            link: "#"
-        },
-        {
-            title: "Exploring CSS Tricks",
-            date: "January 17, 2025",
-            summary: "A collection of my favorite CSS techniques to create visually stunning websites.",
-            link: "#"
+            link: "/blog/posts/vertical_reuse.html"
         }
     ];
 
@@ -24,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     blogPosts.forEach(post => {
         const postElement = document.createElement('div');
-        postElement.classList.add('blog-card');
+        postElement.classList.add('post');
 
         postElement.innerHTML = `
-            <h3>${post.title}</h3>
+            <h2>${post.title}</h2>
             <p class="date">${post.date}</p>
             <p>${post.summary}</p>
             <a href="${post.link}">Read more</a>
@@ -36,6 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
         blogPostsContainer.appendChild(postElement);
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".code-container").forEach(container => {
+        const copyBtn = container.querySelector(".copy-btn");
+        const codeBlock = container.querySelector("pre code");
+
+        copyBtn.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+                copyBtn.innerText = "Copied!";
+                setTimeout(() => {
+                    copyBtn.innerText = "Copy";
+                }, 1500);
+            });
+        });
+    });
+});
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -46,6 +57,29 @@ document.addEventListener("DOMContentLoaded", function() {
         if (link.href.includes(currentPath)) {
             link.classList.add('active');
         }
+    });
+});
+
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    }
+
+    // Show Full Post on Click
+    document.querySelectorAll('.read-more').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        document.querySelectorAll('.full-post').forEach(post => post.style.display = 'none');
+        document.querySelector(targetId).style.display = 'block';
+    });
+    });
+
+    // Back to Blog
+    document.querySelectorAll('.back-to-blog').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.full-post').forEach(post => post.style.display = 'none');
     });
 });
 

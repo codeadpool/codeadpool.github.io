@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="/blog/styles/blog.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/i-am-at.html">Contact</a>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="post-container">
+        <h1 class="post-title">Vertical Reuse</h1>
+        <p class="post-meta">Published on Jan 02, 2025</p>
+
+        <div class="post-content">
+
+            <h2>Reuse</h2>
+            <ul>
+                <li><strong>Vertical Reuse</strong>: Inheritence, using a verification component in a different hierarchical level, usually with an implied change of role.</li>
+                <li><strong>Horizantal Reuse</strong>:  Composition. using a verification component in a different project but at same abstraction level.</li>               
+            </ul>
+
+            <h2>Active/Passive Operations:</h2>
+            <ul>
+                <li>Complete Environment must consider active/passive configuration not only verification components.</li>
+                <li>Active components like drivers/sequencers must not be created in passive-mode.</li>
+                <li>Do not connect scoreboard to active components.</li>
+                <li>Perform functional checks in passive components.</li>
+                <li>Collect functional coverage in passive components.</li>
+                <li>Update configuration only from passive components.</li>
+                <li>Generate important messages in passive components.</li>
+                <li>Don't control end-of-test from components in passive mode.</li>
+                <li>Put user constraints in sequences, not sequence items.</li>
+                <li>Encapsulate all sub-components in a single-reusable Environment.</li>
+                <li>SVAs in interface, combine multiple signal interfaces into a hierarchical interface.</li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 Ayanakoji. All rights reserved.
+    </footer>
+</div>
+
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+</body>
+</html>
