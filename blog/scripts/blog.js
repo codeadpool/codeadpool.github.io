@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "UVM Harness",
             date: "January 19, 2025",
             summary: "Harness why and its uses",
-            link: "/blog/posts/uvm_harness.html"
+            link: "/blog/posts/uvm_harness.html",
         },
         {
             title: "Vertical Reuse",
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const blogPostsContainer = document.getElementById('blog-posts');
-
     blogPosts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.classList.add('post');
@@ -30,8 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>${post.title}</h2>
             <p class="date">${post.date}</p>
             <p>${post.summary}</p>
-            <a href="${post.link}">Read more</a>
         `;
+
+        postElement.addEventListener('click', () => {
+            window.location.href = post.link;  // Navigate to the full post page
+        });
 
         blogPostsContainer.appendChild(postElement);
     });
@@ -52,8 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const currentPath = window.location.pathname;

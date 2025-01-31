@@ -14,16 +14,17 @@
 
 /* Define Color Variables */
 :root {
-  --primary-bg: #212121;
+  /* #5c4a9c purple */
+  --primary-bg: #191a1b;
   --primary-text: #e8e8e8; 
-  --secondary-text: #5c4a9c; 
-  --accent-color: #5c4a9c; 
-  --accent-hover: #5c4a9c; 
-  --card-bg: #1a1a1a; 
+  --secondary-text: #79a617; 
+  --accent-color: #79a617; 
+  --accent-hover: #79a617; 
+  --card-bg: #212121; 
   --card-text: #e8e8e8; 
   --meta-text: #999; 
   --footer-text: #fff;
-  --dark-bg: #141221; 
+  --dark-bg: #000000; 
   --dark-text: #e8e8e8; 
   --dark-card-bg: #1a1a1a; 
   --dark-card-text: #e8e8e8;
@@ -177,7 +178,7 @@ body.dark-mode header p {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(92, 72, 156, 0.9), transparent);
+  background: linear-gradient(90deg, transparent, rgba(121, 166, 23, 0.9), transparent);
   transition: left 0.5s;
 }
 
