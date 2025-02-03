@@ -605,7 +605,7 @@ body.dark-mode .show-more:hover {
   }
 
   .navbar .nav-links a {
-      width: 100%;
+      width: 80%;
       text-align: center;
       padding: 0.5rem;
   }
