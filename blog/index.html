@@ -4,49 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Hardware Blog</title>
+  <link rel="stylesheet" href="/assets/css/top.css">
   <link rel="stylesheet" href="/blog/styles/blog.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div>
-        <a href="/index.html" class="logo">TODAYILEARNT</a>
-      </div>
-  
-      <nav class = "nav-links">
-        <a href="/blog/index.html">HW-BLOG</a>
-        <a href="/projects.html">PROJECTS</a>
-        <a href="/resume.html">RESUME</a>
-        <a href="/i-am-at.html">I-AM-AT</a>
-    </nav>
-      
-    </nav>
-  </header>
-
+  <header>CODEADPOOL</header>
   <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>Hardware Blog</h1>
-      <p>thoughts to think, writes to reads</p>
-    </header>
+    <div class="sidebar">
+      <ul>
+          <li><a href="/blog/index.html">hw-blog</a></li>
+          <li><a href="/projects.html">projects</a></li>
+          <li><a href="/i-am-at.html">i am at</a></li>
+      </ul>
+    </div>
 
+    <div class="post-container">
+      <!-- Blog Posts -->
+      <section class="blog-posts">
+        <div id="blog-posts">
+            <!-- Blog posts will be injected here -->
+        </div>  
+      </section>
 
-    <!-- Blog Posts -->
-    <section class="blog-posts">
-      <div id="blog-posts">
-          <!-- Blog posts will be injected here -->
-      </div>  
-    </section>
-
-    <script src="/blog/scripts/blog.js"></script>
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Ayanakoji. All rights reserved.
-    </footer>
+      <script src="/blog/scripts/blog.js"></script>
+      <script src="/assets/scripts/top.js"></script>
+    </div>
   </div>
-
-  <!-- Dark Mode Toggle -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
-
+  <footer>
+    &copy; 2025 codeadpool. All rights reserved.
+  </footer>
 </body>
 </html>

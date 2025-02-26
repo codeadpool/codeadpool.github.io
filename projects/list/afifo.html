@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Hardware Blog</title>
+  <link rel="stylesheet" href="/assets/css/top.css">
+  <link rel="stylesheet" href="/assets/css/project.css">
+</head>
+<body>
+    <header>CODEADPOOL</header>
+    
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+            <li><a href="/blog/index.html">hw-blog</a></li>
+            <li><a href="/projects.html">projects</a></li>
+            <li><a href="/i-am-at.html">i am at</a></li>
+        </ul>
+      </div>
+
+        <article class="project-container">
+            <div class="sticky-title">
+                <h1 class="project-title">UVM-Based Verification of ASYNC FIFO</h1>
+            </div>
+            <div class="project-content">
+                <h2>syntax:</h2>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code>
+static function void set (uvm_component (cntxt), string (inst_name), string (field_name), T (value));
+                            uvm_config_db#(data_type)::set(this/null, "", "", value);
+                            
+static function bit get  (uvm_component (cntxt), string (inst_name), string (field_name), inout T (value));
+                            uvm_config_db#(data_type)::get(this/null, "", "", value);
+                        </code></pre>
+                    </div>
+        </article>
+        <script src="/assets/scripts/top.js"></script>
+    </div>
+
+    <footer>
+        &copy; 2025 codeadpool. All rights reserved.
+    </footer>
+
+</body>
+</html>
