@@ -158,34 +158,113 @@ transition: color 0.3s;
 color: var(--accent-hover);
 }
 
-
-/* /////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-///////// RESPONSIVE DESIGN CHANGES
-///////////////////////////////////////////////////////////// 
-///////////////////////////////////////////////////////////// */
-
+/* Media Queries for Responsive Adjustments */
 @media (max-width: 768px) {
-header h1 {
-font-size: 2.5rem;
+    .post {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+    }
+
+    .post p {
+        font-size: 0.9rem;
+    }
+
+    .post .meta {
+        font-size: 0.8rem;
+    }
+
+    .post-container {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-meta {
+        font-size: 0.9rem;
+    }
+
+    .post-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .post-content h2,
+    .post-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .post-content ul {
+        padding-left: 20px;
+    }
+
+    .post-content blockquote {
+        padding: 10px;
+        border-left-width: 3px;
+    }
+
+    .post-content img {
+        margin: 10px auto;
+    }
 }
 
-.post h2 {
-font-size: 1.8rem;
-}
-}
+@media (max-width: 480px) {
+    .post {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-.post-container {
-padding: 15px;
-}
+    .post h2 {
+        font-size: 1.5rem;
+    }
 
-.post-title {
-font-size: 2.2rem;
-}
+    .post p {
+        font-size: 0.8rem;
+    }
 
-.post-content {
-font-size: 1.1rem;
-}
+    .post .meta {
+        font-size: 0.75rem;
+    }
+
+    .post-container {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-meta {
+        font-size: 0.8rem;
+    }
+
+    .post-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .post-content h2,
+    .post-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .post-content ul {
+        padding-left: 15px;
+    }
+
+    .post-content blockquote {
+        padding: 8px;
+        border-left-width: 2px;
+    }
+
+    .post-content img {
+        margin: 8px auto;
+    }
 }

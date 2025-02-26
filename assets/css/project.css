@@ -127,3 +127,82 @@ transition: color 0.3s;
 .project-content a:hover {
 color: var(--accent-hover);
 }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-container {
+      max-width: 100%;
+      padding: 15px;
+      margin: 20px auto;
+    }
+  
+    .project {
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+  
+    .project h2 {
+      font-size: 1.8rem;
+    }
+  
+    .project p {
+      font-size: 0.9rem;
+    }
+  
+    .project-title {
+      font-size: 2.2rem;
+    }
+  
+    .project-content {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  
+    .sticky-title {
+      padding-top: 3%;
+      padding-bottom: 2%;
+    }
+  
+    .project-content img {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-container {
+      padding: 10px;
+    }
+  
+    .project {
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .project h2 {
+      font-size: 1.5rem;
+    }
+  
+    .project p {
+      font-size: 0.85rem;
+    }
+  
+    .project-title {
+      font-size: 2rem;
+    }
+  
+    .project-content {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  
+    .project-content ul {
+      padding-left: 20px;
+    }
+  
+    .project-content img {
+      max-width: 100%;
+    }
+  }
