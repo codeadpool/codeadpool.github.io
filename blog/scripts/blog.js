@@ -73,29 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Dark Mode Toggle
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    }
-
-    // Show Full Post on Click
-    document.querySelectorAll('.read-more').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        document.querySelectorAll('.full-post').forEach(post => post.style.display = 'none');
-        document.querySelector(targetId).style.display = 'block';
-    });
-    });
-
-    // Back to Blog
-    document.querySelectorAll('.back-to-blog').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.full-post').forEach(post => post.style.display = 'none');
-    });
-});
-
   
 // document.querySelectorAll(".copy-btn").forEach((button) => {
 //     button.addEventListener("click", () => {

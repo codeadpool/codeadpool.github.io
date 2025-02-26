@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRAM Report</title>
+  <link rel="stylesheet" href="/assets/css/top.css">
+  <link rel="stylesheet" href="/assets/css/project.css">
+</head>
+<body>
+    <header>CODEADPOOL</header>
+    
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+            <li><a href="/blog/index.html">hw-blog</a></li>
+            <li><a href="/projects.html">projects</a></li>
+            <li><a href="/i-am-at.html">i am at</a></li>
+        </ul>
+      </div>
+
+        <article class="project-container">
+            <div class="sticky-title">
+                <h1 class="project-title">UVM-Based Verification of SRAM Memory array</h1>
+            </div>
+            <div class="project-content">
+
+              <h2>Testbench topology</h2>
+              <div class="code-container">
+                  <pre><code>
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_root.svh(641) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------
+Name                         Type                        Size  Value
+--------------------------------------------------------------------
+<unnamed>                    uvm_root                    -     @64  
+  txn_fifo                   uvm_tlm_analysis_fifo #(T)  -     @436 
+    analysis_export          uvm_analysis_imp            -     @485 
+    get_ap                   uvm_analysis_port           -     @475 
+    get_peek_export          uvm_get_peek_imp            -     @455 
+    put_ap                   uvm_analysis_port           -     @465 
+    put_export               uvm_put_imp                 -     @445 
+  uvm_test_top               sram_stress_test            -     @119 
+    env                      sram_env                    -     @167 
+      agent                  sram_agent                  -     @180 
+        m_drv                sram_driver                 -     @396 
+          drv_ap             uvm_analysis_port           -     @495 
+          rsp_port           uvm_analysis_port           -     @415 
+          seq_item_port      uvm_seq_item_pull_port      -     @405 
+        m_mon                sram_monitor                -     @248 
+          mon_ap             uvm_analysis_port           -     @512 
+        m_seqr               uvm_sequencer               -     @259 
+          rsp_export         uvm_analysis_export         -     @268 
+          seq_item_export    uvm_seq_item_pull_imp       -     @386 
+          arbitration_queue  array                       0     -    
+          lock_queue         array                       0     -    
+          num_last_reqs      integral                    32    'd1  
+          num_last_rsps      integral                    32    'd1  
+      cov                    uvm_component               -     @189 
+        analysis_imp         uvm_analysis_imp            -     @198 
+      scb                    sram_scoreboard             -     @208 
+        cov                  uvm_component               -     @531 
+          analysis_imp       uvm_analysis_imp            -     @540 
+        drv_imp              uvm_analysis_imp_drv        -     @217 
+        mon_imp              uvm_analysis_imp_mon        -     @227 
+--------------------------------------------------------------------
+                  </code></pre>
+              </div>
+
+                <h2>Edge case report</h2>
+                    <div class="code-container">
+                        <pre><code>
+
+UVM_INFO sram_scoreboard.svh(408) @ 2000: uvm_test_top.env.scb [SB/STATUS] Current Status @2000
+Pending Writes: 0
+Pending Reads: 0
+Data Mismatches: 0
+
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.scb.cov [COV_REPORT] Total Coverage: 45.45%
+Addr: 60.00%
+Data: 4.69%
+WE: 100.00%
+Cross Addr/WE: 60.00%
+Cross Data/WE: 2.54%
+UVM_INFO sram_scoreboard.svh(433) @ 2000: uvm_test_top.env.scb [SB/REPORT] All transactions validated successfully
+UVM_INFO sram_scoreboard.svh(435) @ 2000: uvm_test_top.env.scb [SB/REPORT] 
+
+SRAM SCOREBOARD FINAL REPORT
+==============================================
+Transactions Tested:  58 (W: 30, R: 28)
+Data Mismatches:      0
+Protocol Violations:   0
+Remaining Expectations: 0 (W: 0, R: 0)
+Functional Coverage:   45.45%
+==============================================
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+                        </code></pre>
+                    </div>
+
+                    <h2>Rand seq report</h2>
+                    <div class="code-container">
+                      <pre><code>
+UVM_INFO sram_scoreboard.svh(408) @ 2000: uvm_test_top.env.scb [SB/STATUS] Current Status @2000
+Pending Writes: 73
+Pending Reads: 30
+Data Mismatches: 0
+
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.cov [COV_REPORT] Total Coverage: 61.91%
+Addr: 0.00%
+Data: 0.00%
+WE: 0.00%
+Cross Addr/WE: 0.00%
+Cross Data/WE: 0.00%
+
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.scb.cov [COV_REPORT] Total Coverage: 61.91%
+Addr: 100.00%
+Data: 6.25%
+WE: 100.00%
+Cross Addr/WE: 100.00%
+Cross Data/WE: 3.32%
+UVM_INFO sram_scoreboard.svh(433) @ 2000: uvm_test_top.env.scb [SB/REPORT] All transactions validated successfully
+UVM_INFO sram_scoreboard.svh(435) @ 2000: uvm_test_top.env.scb [SB/REPORT] 
+
+SRAM SCOREBOARD FINAL REPORT
+==============================================
+Transactions Tested:  200 (W: 135, R: 65)
+Data Mismatches:      0
+Protocol Violations:   0
+Remaining Expectations: 103 (W: 73, R: 30)
+Functional Coverage:   61.91%
+==============================================
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+                      </code></pre>
+                    </div>
+
+                    <h2>Same addr report</h2>
+                    <div class="code-container">
+                      <pre><code>
+UVM_INFO sram_scoreboard.svh(408) @ 2000: uvm_test_top.env.scb [SB/STATUS] Current Status @2000
+Pending Writes: 0
+Pending Reads: 0
+Data Mismatches: 0
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.cov [COV_REPORT] Total Coverage: 31.16%
+Addr: 0.00%
+Data: 0.00%
+WE: 0.00%
+Cross Addr/WE: 0.00%
+Cross Data/WE: 0.00%
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.scb.cov [COV_REPORT] Total Coverage: 31.16%
+Addr: 20.00%
+Data: 10.55%
+WE: 100.00%
+Cross Addr/WE: 20.00%
+Cross Data/WE: 5.27%
+UVM_INFO sram_scoreboard.svh(433) @ 2000: uvm_test_top.env.scb [SB/REPORT] All transactions validated successfully
+UVM_INFO sram_scoreboard.svh(435) @ 2000: uvm_test_top.env.scb [SB/REPORT] 
+SRAM SCOREBOARD FINAL REPORT
+==============================================
+Transactions Tested:  60 (W: 30, R: 30)
+Data Mismatches:      0
+Protocol Violations:   0
+Remaining Expectations: 0 (W: 0, R: 0)
+Functional Coverage:   31.16%
+==============================================
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+                      </code></pre>
+                    </div>
+
+                    <h2>Stress test report</h2>
+                    <div class="code-container">
+                      <pre><code>
+UVM_INFO sram_scoreboard.svh(408) @ 2000: uvm_test_top.env.scb [SB/STATUS] Current Status @2000
+Pending Writes: 2
+Pending Reads: 1
+Data Mismatches: 0
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.cov [COV_REPORT] Total Coverage: 62.36%
+Addr: 0.00%
+Data: 0.00%
+WE: 0.00%
+Cross Addr/WE: 0.00%
+Cross Data/WE: 0.00%
+UVM_INFO sram_coverage.svh(50) @ 2000: uvm_test_top.env.scb.cov [COV_REPORT] Total Coverage: 62.36%
+Addr: 100.00%
+Data: 27.73%
+WE: 100.00%
+Cross Addr/WE: 70.00%
+Cross Data/WE: 14.06%
+UVM_INFO sram_scoreboard.svh(433) @ 2000: uvm_test_top.env.scb [SB/REPORT] All transactions validated successfully
+UVM_INFO sram_scoreboard.svh(435) @ 2000: uvm_test_top.env.scb [SB/REPORT] 
+SRAM SCOREBOARD FINAL REPORT
+==============================================
+Transactions Tested:  100 (W: 92, R: 8)
+Data Mismatches:      0
+Protocol Violations:   0
+Remaining Expectations: 3 (W: 2, R: 1)
+Functional Coverage:   62.36%
+==============================================
+
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-ieee/src/base/uvm_report_server.svh(902) @ 2000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+                      </code></pre>
+                    </div>
+        </article>
+        <script src="/assets/scripts/top.js"></script>
+    </div>
+
+    <footer>
+        &copy; 2025 codeadpool. All rights reserved.
+    </footer>
+
+</body>
+</html>
