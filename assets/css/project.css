@@ -161,6 +161,7 @@ color: var(--accent-hover);
     }
   
     .sticky-title {
+      position: static;
       padding-top: 3%;
       padding-bottom: 2%;
     }
