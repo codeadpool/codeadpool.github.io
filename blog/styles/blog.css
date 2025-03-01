@@ -84,16 +84,6 @@ margin-bottom: 15px;
 text-align: center;
 }
 
-.sticky-title {
-position: -webkit-sticky;
-position: sticky;
-top: 0;
-background-color: var(--main-bg-color);
-z-index: 100;
-padding-top: 2%;
-padding-bottom: 1%;
-}
-
 /* Post Meta (Date, Author, etc.) */
 .post-meta {
 font-size: 1rem;
